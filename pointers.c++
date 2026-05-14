@@ -1,48 +1,25 @@
 #include <iostream>
 #include <iomanip>
+
+
+double avg(double *p, int size)
+{
+    double sum = 0;
+    for(int i = 0; i < size; i++)
+    {
+        sum += p[i];
+    }
+
+    return (sum / size);
+}
+
 using namespace std;
 int main()
 {
-    double a = 1000;
-    double b = 2000;
-    double* p = &a;
-    *p = 3000; 
-    p = &b; 
-    a = *p * 2; 
+    double arr[10] = {1.3, 5, 5.3, 28, 1.9, 3.6, 23.6, 23, 29, 10};
 
-    cout << "a: " << a << endl << "b: " << b << endl << "p: " << p << endl;
+    cout<<"Avg is: " << avg(arr, 10) << endl;
+    cout<<"First element" << *arr<<endl;
 }
 
 
-// first call test(t = 17,  s = 21,  x = 15)
-// s = 4;
-// s = 7;
-// x = 15 + 7 + 17 = 39;
-// t = 35;
-// cout << 7 << 35 << 39;
-// e = 7;
-// f = 39;
-
-
-
-// second call test(t = 16, s = 19, x = 39)
-// s = 4;
-// s = 7;
-// x = 39 + 7 + 16 = 62;
-// t = 35
-// cout << 7 << 35 << 62;
-// b = 7
-// f = 62;
-
-
-
-
-// 2) Trace the following code. Assume that a and b are stored at 20300 and 20308. Your
-// trace table should have entries for a, b, and p.
-// double a = 1000;
-// double b = 2000;
-// double* p = &a;
-// *p = 3000; 
-// p = &b; 
-// a = *p * 2; 
-// a = 4000, b = 200, p = 20308, 
